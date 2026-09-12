@@ -10,11 +10,17 @@ class Config:
     ADMIN_ID = os.getenv("ADMIN_ID")
     
     COMMANDS = {
-        "/start": "Краткая информация и начало диалога",
-        "/reg": "Регистрация"
+        "Анонимное сообщение 🥷": "anon_message",
+        "Наши социальные сети 📱": "social_networks"
     }
 
     DATABASE_PATH = "data/users.db"
+    
+    SOCIAL_NETWORKS = {
+        "GitHub": "https://github.com/Daniel-Pey",
+        "ВК": "https://vk.ru/daniel_pey",
+        "TG": "@D_main_D"
+    }
 
 
 config = Config()

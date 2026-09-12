@@ -1,19 +1,19 @@
 from ..bot import bot
 from ..config import config
 from ..registration import registrate_user
-from backend.keyboards.inline_keyboards import social_networks_keyboard
+from backend.keyboards.inline_keyboards import *
 
 
-@bot.message_handler(commands=["start"])
+@bot.message_handler(commands=["start"], chat_types=['private'])
 def start_answer(msg):
     """ First bot answer"""
 
     bot.send_message(
         msg.chat.id,
-        f"""Привет! Я бот C3PO
-Вот мои команды:
- - {'\n - '.join([f"{k} - {v}" for k, v in config.COMMANDS.items()])}""",
-        reply_markup=social_networks_keyboard()
+        """Привет! Я личный бот-помщник Дани - C3PO
+
+Чем могу помочь?""",
+        reply_markup=commands_keyboard()
         )
 
 
