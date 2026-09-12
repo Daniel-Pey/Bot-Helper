@@ -2,7 +2,7 @@ from backend.bot import bot
 from backend.config import config
 
 
-@bot.message_handler(func=lambda x: x.from_user.id == config.ADMIN_ID)
+@bot.message_handler(func=lambda x: int(x.from_user.id) == config.ADMIN_ID)
 def admin_answer_for_anon(message):
     """Ответ админа на анонимное сообщение"""
 

@@ -7,7 +7,7 @@ load_dotenv()
 class Config:
     TELEBOT_TOKEN = os.getenv("TELEBOT_TOKEN")
     
-    ADMIN_ID = os.getenv("ADMIN_ID")
+    ADMIN_ID = int(os.getenv("ADMIN_ID"))
     
     COMMANDS = {
         "Анонимное сообщение 🥷": "anon_message",
