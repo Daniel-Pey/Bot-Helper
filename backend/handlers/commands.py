@@ -11,6 +11,7 @@ def start_answer(msg):
 
     if msg.chat.type != 'private':
         bot.send_message(msg.chat.id, 'Эта команда доступна только в личном чате с ботом...')
+        bot.delete_message(msg.chat.id, msg.message_id)
         return
 
     bot.send_message(
@@ -26,6 +27,7 @@ def start_answer(msg):
 def send_anon_message_command(message):
     if message.chat.type != 'private':
         bot.send_message(message.chat.id, 'Эта команда доступна только в личном чате с ботом...')
+        bot.delete_message(message.chat.id, message.message_id)
         return
 
     send_anon_message_to_admin(message)
