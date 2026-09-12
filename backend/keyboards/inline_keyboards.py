@@ -13,6 +13,7 @@ def social_networks_keyboard() -> InlineKeyboardMarkup:
     for name, link in config.SOCIAL_NETWORKS.items():
             btn = InlineKeyboardButton(
                 text=name,
+                login_url=link
                 
             )
             markup.add(btn)
