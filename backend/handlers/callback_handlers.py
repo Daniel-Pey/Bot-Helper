@@ -1,4 +1,4 @@
-from bot import bot
+from backend.bot import bot
 from backend.utils import send_anon_message_to_admin
 from telebot import types
 
