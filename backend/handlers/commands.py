@@ -28,4 +28,5 @@ def send_anon_message_command(message):
         bot.reply_to(message, 'Эта команда доступна только в личном чате с ботом...')
         return
 
-    send_anon_message_to_admin(message)
+    msg = bot.send_message(message.from_user.id, "Отлично! Напиши сообщение, которое я должен передать Дане:")
+    bot.register_next_step_handler(msg, callback=send_anon_message_to_admin)
