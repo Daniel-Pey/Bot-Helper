@@ -15,7 +15,7 @@ def start_answer(msg):
 
     bot.send_message(
         msg.chat.id,
-        """Привет! Я личный бот-помщник Дани
+        """Привет! Я личный бот-помощник Дани
 
 Чем могу помочь?""",
         reply_markup=commands_keyboard()
