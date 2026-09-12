@@ -6,7 +6,7 @@ from backend.config import config
 def admin_answer_for_anon(message):
     """Ответ админа на анонимное сообщение"""
 
-    if message.reply_to_message:
+    if message.reply_to_message and not message.reply_to_message.text.startswith('Ответ от Дани:'):
         replied_message = message.reply_to_message.text
         anon_id = replied_message[:replied_message.index('\n')]
         try:
