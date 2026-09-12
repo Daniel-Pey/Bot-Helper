@@ -9,6 +9,8 @@ class Config:
     
     ADMIN_ID = int(os.getenv("ADMIN_ID"))
     
+    CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
+    
     COMMANDS = {
         "Анонимное сообщение 🥷": "anon_message",
         "Наши социальные сети 📱": "social_networks"

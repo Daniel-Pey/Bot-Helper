@@ -2,6 +2,7 @@ from ..bot import bot
 from ..config import config
 from ..registration import registrate_user
 from backend.keyboards.inline_keyboards import *
+from backend.utils import send_anon_message_to_admin
 
 
 @bot.message_handler(commands=["start"], chat_types=['private'])
@@ -15,6 +16,11 @@ def start_answer(msg):
 Чем могу помочь?""",
         reply_markup=commands_keyboard()
         )
+
+
+@bot.message_handler(commands=['anon'], chat_types=['private'])
+def send_anon_message_command(message):
+    send_anon_message_to_admin(message)
 
 
 @bot.message_handler(commands=['reg'])
