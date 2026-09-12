@@ -5,9 +5,13 @@ from backend.keyboards.inline_keyboards import *
 from backend.utils import send_anon_message_to_admin
 
 
-@bot.message_handler(commands=["start"], chat_types=['private'])
+@bot.message_handler(commands=["start"])
 def start_answer(msg):
     """ First bot answer"""
+
+    if msg.chat.type != 'private':
+        bot.send_message(msg.chat.id, 'Эта команда доступна только в личном чате с ботом...')
+        return
 
     bot.send_message(
         msg.chat.id,
@@ -18,13 +22,10 @@ def start_answer(msg):
         )
 
 
-@bot.message_handler(commands=['anon'], chat_types=['private'])
+@bot.message_handler(commands=['anon'])
 def send_anon_message_command(message):
+    if message.chat.type != 'private':
+        bot.send_message(message.chat.id, 'Эта команда доступна только в личном чате с ботом...')
+        return
+
     send_anon_message_to_admin(message)
-
-
-@bot.message_handler(commands=['reg'])
-def registrate(msg):
-    """Обработчик команды /reg"""
-    bot.send_message(msg.chat.id, "Отлично для этого мне нужно чтобы немного рассказал о себе 🤪")
-    bot.register_next_step_handler(msg, registrate_user)
