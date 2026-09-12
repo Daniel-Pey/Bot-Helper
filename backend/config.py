@@ -19,7 +19,8 @@ class Config:
     SOCIAL_NETWORKS = {
         "GitHub": "https://github.com/Daniel-Pey",
         "ВК": "https://vk.ru/daniel_pey",
-        "TG": "https://t.me/D_main_D"
+        "TG": "https://t.me/D_main_D",
+        "Instagram": "https://www.instagram.com/danielpeyson/"
     }
 
 
